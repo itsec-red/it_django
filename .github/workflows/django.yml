@@ -20,4 +20,4 @@ jobs:
         # pip install -r requirement.txt
     - name: Run Tests
       run: |
-        python manage.py runserver
+        python app/manage.py runserver
