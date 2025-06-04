@@ -15,9 +15,10 @@ jobs:
         ip a
     - name: Install Dependencies
       run: |
-        cd ../
+        cd ..
         python -m pip install --upgrade pip
         # pip install -r requirement.txt
     - name: Run Tests
       run: |
+        cd ..
         python app/manage.py runserver
