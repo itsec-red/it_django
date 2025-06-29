@@ -5,12 +5,10 @@ on:
     branches: [ "main" ]
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Print hostname 
-    - run: |
+      run: |
         hostname
         echo " i am build stage"
   test:
@@ -18,12 +16,12 @@ jobs:
 
     steps:
     - name: Print hello world
-    - run: |
+      run: |
         echo " i am test stage"
   release:
     runs-on: ubuntu-latest
 
     steps:
     - name: Print hostname
-    - run: |
+      run: |
         echo "this is release"
