@@ -3,22 +3,28 @@ name: Devops
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:
 jobs:
-  deploy:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
+    - name: Print hostname 
     - run: |
         hostname
         ip a
-    - name: Install Dependencies
-      run: |
-        cd ..
-        python -m pip install --upgrade pip
-        # pip install -r requirement.txt
-    - name: Run Tests
-      run: |
-        cd ..
-        python app/manage.py runserver
+        echo " i am build stage"
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print hello world
+    - run: |
+        echo " i am test stage"
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print hostname
+    - run: |
+        echo "this is release"
