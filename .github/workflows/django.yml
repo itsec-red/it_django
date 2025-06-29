@@ -12,7 +12,6 @@ jobs:
     - name: Print hostname 
     - run: |
         hostname
-        ip a
         echo " i am build stage"
   test:
     runs-on: ubuntu-latest
