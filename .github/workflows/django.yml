@@ -10,18 +10,24 @@ jobs:
     - name: Print hostname 
       run: |
         hostname
+        ip a
         echo " i am build stage"
   test:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
     - name: Print hello world
       run: |
+        ip a
         echo " i am test stage"
   release:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
     - name: Print hostname
       run: |
+        hostname
+        ip a
         echo "this is release"
