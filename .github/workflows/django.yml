@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: server1
     steps:
     - name: Print hostname 
       run: |
@@ -14,7 +14,7 @@ jobs:
         echo " i am build stage"
   test:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: server1
 
     steps:
     - name: Print hello world
@@ -23,7 +23,7 @@ jobs:
         echo " i am test stage"
   release:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: server1
 
     steps:
     - name: Print hostname
